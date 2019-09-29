@@ -16,7 +16,7 @@ public class GameController {
     private int counter;
 
     public GameController() {
-        counter = 0;
+
         result = new String();
         random = new Random().nextInt(10);
     }
@@ -26,7 +26,6 @@ public class GameController {
         model.addAttribute("numberFromUser", new RandomNumber());
         model.addAttribute("random", random);
         model.addAttribute("result", result);
-        model.addAttribute("counter", counter);
         return "game/numberView";
     }
 
@@ -34,7 +33,7 @@ public class GameController {
     public String checkNumber(@ModelAttribute RandomNumber randomNumber) {
         counter++;
         if (randomNumber.getUserValue() == random) {
-            result = "Brawo zgadles !";
+            result = "Brawo zgadles ! za " + counter + " razem";
         } else {
 
             result = "Nie trafiles! ";
