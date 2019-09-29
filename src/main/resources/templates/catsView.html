@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cats</title>
+</head>
+<!--<body th:bgcolor="${colorModel}">  PIERWSZA WERSJA-->
+<body>
+<h1> SIEMA KOTKI</h1>
+
+<h2> DODAWANIE </h2>
+<form th:action="@{/cats}" th:object="${newCat}" method="post">
+    Cat name:
+    <input type="text" th:field="*{name}"><br>
+    Cat breed:
+    <input type="text" th:field="*{breed}"><br>
+    Cat color:
+    <input type="text" th:field="*{color}"><br>
+    <input type="submit" value="add new cat"><br>
+</form>
+<h2> USUWANIE</h2>
+<form th:action="@{/remove-cat}" th:object="${newCat}" method="post">
+    Cat name:
+    <input type="text" th:field="*{name}"><br>
+    <input type="submit" value="remove cat"><br>
+    <p></p>
+    <tr th:each="cat: ${catListModel}">
+        <td th:text="${cat.getName()}"></td>
+        <br>
+        <td th:text="${cat.getBreed()}"></td>
+        <br>
+        <td th:text="${cat.getColor()}"></td>
+        <br>
+        <p>=================================</p>
+    </tr>
+</form>
+
+    <!-- <b th:text="${nameModel}"></b><br>
+    <p th:text="${breedModel}"></u><br>
+    <em> th:text="${colorModel}"></em>  PIERWSZA WERSJA -->
+
+</body>
+</html>
