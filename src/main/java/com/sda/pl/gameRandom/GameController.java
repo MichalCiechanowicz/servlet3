@@ -34,8 +34,8 @@ public class GameController {
         counter++;
         if (randomNumber.getUserValue() == random) {
             result = "Brawo zgadles ! za " + counter + " razem";
+            counter = 0;
         } else {
-
             result = "Nie trafiles! ";
         }
         return "redirect:/game";
