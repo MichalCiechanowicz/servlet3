@@ -1,4 +1,4 @@
-package com.sda.pl.game;
+package com.sda.pl.catGame;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,17 +22,17 @@ public class CatController {
         catList.add(new Cat("Klakier", "Dachowiec", "ginger"));
     }
 
-    @GetMapping("/cats")
+    @GetMapping("/catGame")
     public String getCats(Model model) {
         model.addAttribute("catListModel", catList);
         model.addAttribute("newCat", new Cat());
-        return "catsView";
+        return "catsGame/catsView";
     }
 
-    @PostMapping("/cats")
+    @PostMapping("/catGame")
     public String addCat(@ModelAttribute Cat cat) {
         catList.add(cat);
-        return "redirect:/cats";
+        return "redirect:/catGame";
     }
 
     @PostMapping("/remove-cat")
@@ -44,7 +44,7 @@ public class CatController {
         } else {
             System.out.println("Takiego kotka nie mamy na liscie do utylizacji");
         }
-        return "redirect:/cats";
+        return "redirect:/catGame";
     }
 
 }

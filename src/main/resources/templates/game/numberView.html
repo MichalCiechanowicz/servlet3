@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Number</title>
+    <title>Number Guess</title>
 </head>
 <body>
 
 <p th:text="${random}"/>
-<h1> Dodawanie </h1><br>
+<h1> Podaj liczbe </h1><br>
 <form th:action="@{/game}" th:object="${numberFromUser}" method="post">
     <input type="text" th:field="*{userValue}">
     <input type="submit" value="check">

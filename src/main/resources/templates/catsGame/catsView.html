@@ -9,7 +9,7 @@
 <h1> SIEMA KOTKI</h1>
 
 <h2> DODAWANIE </h2>
-<form th:action="@{/cats}" th:object="${newCat}" method="post">
+<form th:action="@{/catGame}" th:object="${newCat}" method="post">
     Cat name:
     <input type="text" th:field="*{name}"><br>
     Cat breed:
@@ -24,6 +24,7 @@
     <input type="text" th:field="*{name}"><br>
     <input type="submit" value="remove cat"><br>
     <p></p>
+    <h2> Lista Kotkow </h2>
     <tr th:each="cat: ${catListModel}">
         <td th:text="${cat.getName()}"></td>
         <br>

@@ -1,4 +1,4 @@
-package com.sda.pl.game;
+package com.sda.pl.catGame;
 
 public class Cat {
 

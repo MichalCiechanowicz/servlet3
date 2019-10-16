@@ -1,4 +1,4 @@
-package com.sda.pl.game;
+package com.sda.pl.catGame;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,11 @@
 package com.sda.pl.gameRandom;
 
 public class RandomNumber {
+
     private int userValue;
+
+    public RandomNumber() {
+    }
 
     public RandomNumber(int userValue) {
         this.userValue = userValue;
@@ -14,9 +18,4 @@ public class RandomNumber {
     public void setUserValue(int userValue) {
         this.userValue = userValue;
     }
-
-    public RandomNumber() {
-    }
-
-
 }
